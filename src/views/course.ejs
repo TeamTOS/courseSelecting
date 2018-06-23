@@ -9,9 +9,10 @@
     	<script src="js/skel-layers.min.js"></script>
     	<script src="js/init.js"></script>
     	<noscript>
-    	<link rel="stylesheet" href="css/skel.css" />
-    	<link rel="stylesheet" href="css/style.css" />
-    	<link rel="stylesheet" href="css/style-xlarge.css" />
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+			<link rel="stylesheet" href="css/course.css">
     	</noscript>
 	</head>
     <body>
@@ -27,12 +28,15 @@
 				</ul>
 			</nav>
 		</header>
-		<div class=container>
-        	<%for(let i=0; i<course.length; i++){%>
-           		<ul>
-                	<li><%=course[i].class%></li>
-            	</ul>
-        	<%}%>
+		<div class="container">
+            <form name="registerForm" action="/curriculum" method="post">
+				<%for(let i=0; i<course.length; i++){%>
+					<input type="checkbox" name="<%=course[i].class%>" value="<%=course[i].class%>"><%=course[i].class%><br>
+				<%}%>
+				<input type="submit" value="加入登記清單">
+            </form>
     	</div>
+
+
     </body>
 </html>

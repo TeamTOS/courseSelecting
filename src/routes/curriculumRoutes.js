@@ -28,7 +28,10 @@ const router = function () {
                     curriculum: allCurriculum
                 }
             );
-        });
+        })
+        .post( (req,res) => {
+            res.send(req.body);
+        })
 
     return curriculumRouter;
 };
