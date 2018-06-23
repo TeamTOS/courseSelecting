@@ -39,6 +39,11 @@ const router = function () {
             successRedirect: '/index',
             failureRedirect: '/'
         }));
+    authRouter.route('/logout')
+        .get( (req,res) => {
+            req.logout();
+            res.redirect('/');
+        });
 
     authRouter.route('/profile')
         .all((req, res, next) => {
