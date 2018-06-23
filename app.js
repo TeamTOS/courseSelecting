@@ -37,7 +37,7 @@ app.use('/course', courseRouter);
 app.use('/curriculum', curriculumRouter);
 app.use('/admin', adminRouter);
 ///////////////////////////////////
-const mod = require('./backendSys.js');
+//const mod = require('./backendSys.js');
 
 /////////////////////////////backend API sample//////////////////////////
 
