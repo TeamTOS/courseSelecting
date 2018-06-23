@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>選課系統</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+	</head>
+	<body id="top">
+
+		<!-- Header -->
+			<header id="header" class="skel-layers-fixed">
+				<h1><a href="https://i.nccu.edu.tw/Login.aspx?ReturnUrl=%2fdefault.aspxl">INCCU</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="http://www.nccu.edu.tw/">政大首頁</a></li>
+						<li><a href="/">系統首頁</a></li>
+						<!--<li><a href="index.html" class="button special">登入</a></li>-->
+						<li><a href="/index" class="button special">課程查詢</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Banner -->
+			<section id="banner">
+				<div class="inner">
+					<h2>選課系統</h2>
+					<ul class="actions">
+						<!--<li><a href="index.html" class="button big special">登入</a></li>-->
+					</ul>
+				</div>
+			</section>
+
+		<!-- One -->
+			<section id="one" class="wrapper style1">
+				<div class="4u" style="margin: auto">
+					<!--<form action="/auth/login" method="post">
+						學號:<br>
+						<input type="text" name="user" style="text-align: left"></input>
+						<br>
+						密碼:<br>
+						<input type="password" name="password" style="text-align: left"></input>
+						<br>
+						<input type="submit" value="登入">
+					</form>-->
+					<form name="loginForm" action="/auth/login" method="post">
+						學號:<br/>
+						<input type="text" name="studentID" style="text-align: left" id="studentID"><br/>
+						密碼:<br/>
+						<input type="password" name="password" style="text-align: left" id="password "><br/>
+						<input type="submit" name="login" value="登入">
+					</form>
+				</div>
+			</section>
+	</body>
+</html>

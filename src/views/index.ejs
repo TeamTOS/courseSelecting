@@ -1,0 +1,240 @@
+<html>
+    <head>
+        <title>選課系統</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <script src="js/jquery.min.js"></script>
+        <script src="js/skel.min.js"></script>
+        <script src="js/skel-layers.min.js"></script>
+        <script src="js/init.js"></script>
+        <noscript>
+            <link rel="stylesheet" href="css/skel.css" />
+            <link rel="stylesheet" href="css/style.css" />
+            <link rel="stylesheet" href="css/style-xlarge.css" />
+        </noscript>
+        <script src="/js/jquery.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous">
+
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous">
+        </script>
+        <script src="/js/bootstrap.min.js"
+            integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+            crossorigin="anonymous">
+        </script>
+        <script>
+        $(document).ready(function () {
+            $("#select option").on("click", function () {
+                alert('It works');
+            });
+        });
+        </script>
+    </head>
+    <body>
+        <header id="header" class="skel-layers-fixed">
+            <h1><a href="https://i.nccu.edu.tw/Login.aspx?ReturnUrl=%2fdefault.aspxl">INCCU</a></h1>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="http://www.nccu.edu.tw/">政大首頁</a></li>
+                        <li><a href="/">系統首頁</a></li>
+                        <li><a href="/curriculum" class="button special">我的課表</a></li>
+                        <li><a href="/index" class="button special">課程查詢</a></li>
+                    </ul>
+                </nav>
+        </header>
+        <div class="container">
+            <br>
+            <div class="8u" style="margin: auto">
+                <form name="queryCourseForm" id="queryCourseForm" action="/course" method="post">
+                    <div class="selection-div" >
+                        <div class="selection-div-inside" id="selection-div-1">
+                            <select name="academy" class="academySelect" onchange="showDegree(this)">
+                                <option value="none">-</option>
+                                <option value="integrated_general">整開_通識</option>
+                                <option value="minor_credited_internship">輔系_學分學程_教學實習與實務</option>
+                                <option value="service_PE_defenseEducation">服務學習_體育_全民國防課程</option>
+                                <option value="literature">文學院</option>
+                                <option value="science">理學院</option>
+                                <option value="society">社科院</option>
+                                <option value="law">法學院</option>
+                                <option value="commerce">商學院</option>
+                                <option value="foreign">外文學院</option>
+                                <option value="broadcast">傳播學院</option>
+                                <option value="international">國際學院</option>
+                                <option value="education">教育學院</option>
+                            </select>
+                            <br>
+                            <select name="degree" class="degreeSelect" onchange="showDepartment(this)"></select>
+                            <br>
+                            <select name="department" class="departmentSelect"></select>
+                            <button type="button" name="remove" class="removeBtn" style="display:inline-block" onclick="removeDiv(this)">-</button>
+                        </div>
+                    </div>
+                    <br>
+                    <button type="button" name="plus" class="plusBtn" onclick="newSelect()">+</button>
+                    <input type="submit" value="query">
+                </form>
+            </div>
+        </div>
+        <script>
+            const college = {
+                'integrated_general':{
+                'integrated':['management','economics'],
+                'general':['humanities','socialSciences','naturalSciences']
+                },
+                'minor_credited_internship':{
+                'minor':['trade','accounting','japanese'],
+                'credited':['creativity','patent','artIndustry'],
+                'internship':['internship']
+                },
+                'service_PE_defenseEducation':{
+                'service':['serviceCourse'],
+                'PE':['PErequired','PEacquired','PEschoolTeam'],
+                'defenseEducation':['defenseEducationCourse']
+                },
+                'society':{
+                'bachelor':[],
+                'master': [],
+                'doctor':[]
+                },
+                'law':{
+                'bachelor':[],
+                'master': [],
+                'doctor':[]
+                },
+                'commerce':{
+                'bachelor':[],
+                'master': [],
+                'doctor':[]
+                },
+                'foreign':{
+                'bachelor':[],
+                'master': [],
+                'doctor':[]
+                },
+                'broadcast':{
+                'bachelor':[],
+                'master': [],
+                'doctor':[]
+                },
+                'international':{
+                'bachelor':[],
+                'master': [],
+                'doctor':[]
+                },
+                'education':{
+                    'bachelor':[],
+                    'master': [],
+                    'doctor':[]
+                },
+                'literature': {
+                    'bachelor': ['chinese','history','philosophy'],
+                    'master': ['chineseM','libraryInformation','religion','taiwanHistory','taiwanCulture'],
+                    'doctor': ['chineseTeaching']
+                },
+                'science': {
+                    'bachelor': ['psycology','mathematics','computerScience'],
+                    'master': ['nerve','physics','computerScienceM'],
+                    'doctor': ['societyAI']
+                }
+            };
+        const value2name={"integrated_general":"整開_通識","minor_credited_internship":"輔系_學分學程_教學實習與實務",
+        "service_PE_defenseEducation":"服務學習_體育_全民國防課程",
+        "literature":"文學院","science":"理學院","society":"社科院","law":"法學院","commerce":"商學院",
+        "foreign":"外文學院","broadcast":"傳播學院","international":"國際學院","education":"教育學院",
+        "integrated":"整開","general":"通識","minor":"輔系","credited":"學分學程","internship":"教學實習與實務",
+        "service":"服務","PE":"體育","defenseEducation":"國防","bachelor":"學士班","master":"碩士班","doctor":"博士班",
+        "management":"管理學","economics":"經濟學","humanities":"人文通","socialSciences":"社會通","naturalSciences":"自然通",
+        "trade":"貿輔","accounting":"會輔","japanese":"日輔","creativity":"創意學程","patent":"專利學程","artIndustry":"藝術產業經營學程",
+        "intership":"教育實習與實務","serviceCourse":"服務學習課程","PErequired":"體育必修","PEacquired":"體育選修","PEschoolTeam":"體育代表隊",
+        "defenseEducationCourse":"全民國防課程","chinese":"中文系","history":"歷史系","philosophy":"哲學系","chineseM":"中文所",
+        "libraryInformation":"圖資所","religion":"宗教所","taiwanHistory":"台史所","taiwanCulture":"台文所","chineseTeaching":"華文教學博士",
+        "psycology":"心理系", "mathematics":"應數系", "computerScience":"資科系", "nerve":"神經所", "physics":"應物所", "computerScienceM":"資科所", "societyAI":"社群與人智博士",
+    };
+
+var id=1;//use to generate dynamic id
+var divIdList=['selection-div-1'];
+function test() {
+    for(var key in value2name)
+        console.log(key+" "+value2name[key]);
+}
+
+$("#queryCourseForm").submit(function (event) {
+        //error handling
+        if(!checkIfSelect()){
+        alert("Please select!!");
+        event.preventDefault();
+        }
+
+        });
+function checkIfSelect(){//error handling
+    for(var i=1;i<=getId();i++) {
+        if ($("#selection-div-" + i + " .academySelect").val() === "none" || $("#selection-div-" + i + " .degreeSelect").val() === "none" || $("#selection-div-" + i + " .departmentSelect").val() === "none") {
+            return false;
+        }
+    }
+    return true;
+}
+function getId(){
+    return id;
+}
+function newSelect() {
+    if(!checkIfSelect()){
+        alert("Don't be too greedy!");
+        return;
+    }
+    id++;
+    divIdList.push('selection-div-'+id);
+    console.log("New Select Block!");
+
+    $(".selection-div").append("<div class=\"selection-div-inside\" id=\"selection-div-"+getId()+"\"></div>");
+    $("#"+divIdList[0]+" .academySelect").clone().appendTo($("#selection-div-"+getId()));
+    $("#"+divIdList[0]+" .degreeSelect").clone().appendTo($("#selection-div-"+getId()));
+    $("#"+divIdList[0]+" .departmentSelect").clone().appendTo($("#selection-div-"+getId()));
+    $("#"+divIdList[0]+" .removeBtn").clone().appendTo($("#selection-div-"+getId()));
+}
+function removeDiv(btn){
+    if(divIdList.length==1){
+        alert("At least 1 selection to query!");
+        return;
+    }
+    var target=$(btn).closest('div').attr('id');
+    $('#'+target).remove();
+    var index = divIdList.indexOf(target);
+    if (index > -1) {
+        divIdList.splice(index, 1);
+        console.log(divIdList)
+    }
+}
+
+function showDegree(me) {
+    var myId=$(me).closest('div').attr('id');
+    $("#"+myId +" .departmentSelect").html('<option value="none">-</option>');
+    var academySelect=$("#"+myId +" .academySelect").val();
+    var row=["<option value=\"none\">-</option>"];
+    for(key in college[academySelect]) {
+        //console.log(key);
+        row += "<option value=\"" + key + "\">" + value2name[key] + "</option>";
+    }
+    $("#"+myId +" .degreeSelect").html(row);
+}
+
+function showDepartment(me) {
+    var myId=$(me).closest('div').attr('id');
+    var academySelect=$("#"+myId+" .academySelect").val();
+    var degreeSelect=$("#"+myId +" .degreeSelect").val();
+    var row=["<option value=\"none\">-</option>"];
+    for(var i=0;i<college[academySelect][degreeSelect].length;i++) {
+        key=college[academySelect][degreeSelect][i];
+        row += "<option value=\"" + key + "\">" + value2name[key] + "</option>";
+    }
+    $("#"+myId +" .departmentSelect").html(row);
+}
+
+</script>
+</body>
+</html>

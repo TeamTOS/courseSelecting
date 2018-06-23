@@ -1,0 +1,58 @@
+{
+  "name": "courseselecting",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TeamTOS/courseSelecting.git"
+  },
+  "author": "kai2june",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TeamTOS/courseSelecting/issues"
+  },
+  "homepage": "https://github.com/TeamTOS/courseSelecting#readme",
+  "dependencies": {
+    "body-parser": "1.18.2",
+    "bootstrap": "4.1.1",
+    "chalk": "2.4.1",
+    "cookie-parser": "1.4.3",
+    "debug": "3.1.0",
+    "ejs": "2.5.9",
+    "eslint": "4.19.1",
+    "express": "4.16.3",
+    "express-session": "1.15.6",
+    "jquery": "3.3.1",
+    "mongodb": "3.0.7",
+    "morgan": "1.9.0",
+    "mysql": "2.15.0",
+    "nodemon": "1.17.3",
+    "passport": "0.4.0",
+    "passport-local": "1.0.0",
+    "path": "0.12.7"
+  },
+  "devDependencies": {
+    "eslint-config-airbnb": "16.1.0",
+    "eslint-config-airbnb-base": "12.1.0",
+    "eslint-plugin-import": "2.11.0",
+    "eslint-plugin-jsx-a11y": "6.0.3",
+    "eslint-plugin-react": "7.7.0"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "ignore": [
+      "node_modules/**/node_modules"
+    ],
+    "delay": 2500,
+    "env": {
+      "NODE_ENV": "development",
+      "PORT": 3000
+    }
+  }
+}
