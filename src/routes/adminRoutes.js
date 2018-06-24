@@ -42,7 +42,7 @@ for (var i = 0; i < array.length; i++) {
     new_courses.push(course);
 
 }
-console.log(new_courses);
+//console.log(new_courses);
 
 const courses = [
     {

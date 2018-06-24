@@ -157,7 +157,7 @@ libraryInformation 155816001	3	檔案技術服務專	薛理桂	圖檔碩一	四2
 libraryInformation 155822001	1	圖書資訊專業實	王梅玲	圖檔碩一	二5	百年330408	選/Elective	中文/Mandarin	否/No	＠異動資訊Information       of alteration:時間異動於2017/12/26;	＠備註Note:N/A
 libraryInformation 155829001	3	數位出版與學術	邱炯友	圖檔碩一	五234	百年330408	選/Elective	中文/Mandarin	否/No	＠異動資訊Information       of alteration:N/A	＠備註Note:N/A
 libraryInformation 155833001	3	出版產業政策研	邱炯友	圖檔博一	三D56	百年330408	選/Elective	中文/Mandarin	否/No	＠異動資訊Information       of alteration:N/A	＠備註Note:N/A
-libraryInformation 155845001	3	現代歷史影像的	"	SHAO  MING-HUANG	圖檔碩一	thu13-16   thu 13 14 15	百年330407	選/Elective	中文/Mandarin	否/No	＠異動資訊Information       of alteration:N/A
+libraryInformation 155845001	3	現代歷史影像的	"	SHAO-MING-HUANG	圖檔碩一	thu13-16   thu 13 14 15	百年330407	選/Elective	中文/Mandarin	否/No	＠異動資訊Information       of alteration:N/A
 libraryInformation 155846001	1	個別研究A	蔡明月	圖檔博一	一7	百年330407	選/Elective	中文/Mandarin	否/No	＠異動資訊Information       of alteration:N/A	＠備註Note:N/A
 libraryInformation 155857001	3	歷史檔案數位化	邵銘煌	圖檔碩一	三D56	百年330407	選/Elective	中文/Mandarin	否/No	＠異動資訊Information       of alteration:N/A	＠備註Note:N/A
 libraryInformation 155882001	3	電子文件管理專	林巧敏	圖檔碩一	二234	百年330408	選/Elective	中文/Mandarin	否/No	＠異動資訊Information       of alteration:N/A	＠備註Note:N/A
@@ -791,7 +791,7 @@ computerScience 703848001	3	數據科學與大數	胡毓忠	資科三資	三234	
 computerScience 703853001	3	資訊系統與網路	胡毓忠	資科三資	二234	大仁200105	選/Elective	中文/Mandarin	否/No	＠異動資訊Information       of alteration:N/A	＠備註Note:N/A
 computerScience 703880001	3	XML技術與應用	陳正佳	資科三資	一D56	大仁200101	選/Elective	中文/Mandarin	否/No	＠異動資訊Information       of alteration:N/A	＠備註Note:N/A
 computerScience 703901001	3	機器學習概論	劉昭麟	資科二資	二234	大仁200301	選/Elective	中文/Mandarin	否/No	＠異動資訊Information       of alteration:時間異動於2018/01/04;	＠備註Note:N/A
-computerScience 703903001	3	Java  程式設計	陳正佳	資科二資	五D56	大仁200106	選/Elective	中文/Mandarin	否/No	＠異動資訊Information       of alteration:N/A	＠備註Note:N/A
+computerScience 703903001	3	Java程式設計	陳正佳	資科二資	五D56	大仁200106	選/Elective	中文/Mandarin	否/No	＠異動資訊Information       of alteration:N/A	＠備註Note:N/A
 computerScience 703918001	3	電腦視覺	廖文宏	資科四	四234	大仁200106	選/Elective	中文/Mandarin	否/No	＠異動資訊Information       of alteration:N/A	＠備註Note:與753916-00-1合開
 computerScience 703920001	3	網路與通訊概論	郭桐惟	資科二	一D56	大仁200106	選/Elective	中文/Mandarin	否/No	＠異動資訊Information       of alteration:時間異動於2018/01/04;	＠備註Note:N/A
 computerScience 703958001	0	計算機程式設計	蔡銘峰	資科一	四EF	資科電腦室	必/Required	中文/Mandarin	否/No	＠異動資訊Information       of alteration:N/A	＠備註Note:N/A

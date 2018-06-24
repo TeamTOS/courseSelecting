@@ -1,6 +1,6 @@
 <html>
 	<head>
-    	<title>選課系統</title>
+    	<title>輕鬆選課E把抓</title>
     	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
     	<meta name="description" content="" />
     	<meta name="keywords" content="" />
@@ -59,9 +59,9 @@
 						<%}else if(academy[i] == 'education'){%>
 							<td style="background-color: grey;"></td>
 						<%}%>
-						<td><%=academy[i]%></td>
-						<td><%=degree[i]%></td>
-						<td><%=department[i]%></td>
+						<td><%=value2name[academy[i]]%></td>
+						<td><%=value2name[degree[i]]%></td>
+						<td><%=value2name[department[i]]%></td>
 					</tr>
 				<%}%>
 			</table>
@@ -76,7 +76,6 @@
 						<th>point</th>
 						<th>time</th>
 						<th>place</th>
-						<th>academy</th>
 						<th>department</th>
 						<th>degree</th>
 						<th>level</th>
@@ -91,8 +90,7 @@
 							<td><%=course[i].point%></td>
 							<td><%=course[i].time%></td>
 							<td><%=course[i].place%></td>
-							<td><%=course[i].academy%></td>
-							<td><%=course[i].department%></td>
+							<td><%=value2name[course[i].department]%></td>
 							<td><%=course[i].degree%></td>
 							<td><%=course[i].level%></td>
 						</tr>
