@@ -36,22 +36,25 @@ const router = function () {
                     const client = await MongoClient.connect(url);
                     const db = client.db(dbName);
                     const coll = db.collection('courses');
-                    let rlt_findManyCourses = [];
-                    if(typeof(req.body.department) == 'string')
-                        rlt_findManyCourses = await coll.find({department: req.body.department, degree: req.body.degree}).toArray();
-                    else{
-                        let query_arr = [];
-                        for(let i=0; i< req.body.department.length; i++){
-                            let query = {
-                                department: req.body.department[i], 
-                                degree: req.body.degree[i]
-                            };
-                            query_arr[i] = query;
-                        }
-                        rlt_findManyCourses = await coll.find({ $or: query_arr }).toArray();
+                    if(typeof(req.body.academy) == 'string'){
+                        req.body.academy = [req.body.academy];
+                        req.body.degree = [req.body.degree];
+                        req.body.department = [req.body.department];
                     }
-                    // res.json(rlt_findManyCourses);
+                    
+                    let query_arr = [];
+                    for(let i=0; i< req.body.academy.length; i++){
+                        let query = {
+                            department: req.body.department[i], 
+                            degree: req.body.degree[i]
+                        };
+                        query_arr[i] = query;
+                    }
+                    let rlt_findManyCourses = [];
+                    rlt_findManyCourses = await coll.find({ $or: query_arr }).toArray();
+                    
                     res.render('course', {
+                        academy: req.body.academy,
                         course: rlt_findManyCourses
                     }
                     );

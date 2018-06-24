@@ -27,6 +27,31 @@
 				</ul>
 			</nav>
 		</header>
+		<div class=4u style="margin: auto">
+			<br>
+			<p style="text-align: center; margin: 0">搜尋結果</p>
+			<br>
+			<table style="text-align: center">
+				<tr>
+					<th></th>
+					<th style="text-align: center">Academy</th>
+					<th style="text-align: center">Degree</th>
+					<th style="text-align: center">Department</th>
+				</tr>
+				<%for(let i=0;i<course.length;i++){%>
+					<tr>
+						<%if(i==0){%>
+							<td style="background-color: #FF0000;"></td>
+						<%}else if(i==1){%>
+							<td style="background-color: #0000FF;"></td>
+						<%}%>
+						<td><%=academy[i]%></td>
+						<td><%=course[i].degree%></td>
+						<td><%=course[i].department%></td>
+					</tr>
+				<%}%>
+			</table>
+    	</div>
 		<div class="container">
             <form name="registerForm" action="/curriculum" method="post">
 				<table>
