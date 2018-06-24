@@ -29,166 +29,38 @@
 	</header>
 	<div class=container>
 		<table>
-		<tr>
-			<th></th>
-		 	<th>星期一</th>
-			<th>星期二</th>
-		 	<th>星期三</th>
-		 	<th>星期四</th>
-		 	<th>星期五</th>
-		 	<th>星期六</th>
-		 	<th>星期日</th>
-		</tr>
-		<tr>
-		 	<td>07:10 ~ 08:00</td>
-		 	<td></td>
-		 	<td></td>
-		 	<td></td>
-		 	<td></td>
-		 	<td></td>
-		 	<td></td>
-		 	<td></td>
-		</tr>
-		<tr>
-		 	<td>08:10 ~ 09:00</td>
-		 	<td></td>
-		 	<td></td>
-		 	<td></td>
-		 	<td></td>
-		 	<td></td>
-		 	<td></td>
-		 	<td></td>
-		</tr>
-		<tr>
-		  	<td>09:10 ~ 10:00</td>
-			<td></td>
-			<td>作業系統</td>
-			<td></td>
-			<td>計算機網路</td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-		  	<td>10:10 ~ 11:00</td>
-		  	<td></td>
-		  	<td>作業系統</td>
-		  	<td></td>
-		  	<td>計算機網路</td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		</tr>
-		<tr>
-		  	<td>11:10 ~ 12:00</td>
-		  	<td></td>
-		  	<td>作業系統</td>
-		  	<td></td>
-		  	<td>計算機網路</td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		</tr>
-		<tr>
-		  	<td>12:10 ~ 13:00</td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		</tr>
-		<tr>
-		  	<td>13:10 ~ 14:00</td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		  	<td>程式語言</td>
-		  	<td></td>
-		  	<td></td>
-		</tr>
-		<tr>
-		  	<td>14:10 ~ 15:00</td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		  	<td>程式語言</td>
-		  	<td></td>
-		  	<td></td>
-		</tr>
-		<tr>
-		  	<td>15:10 ~ 16:00</td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		  	<td>程式語言</td>
-		  	<td></td>
-		  	<td></td>
-		</tr>
-		<tr>
-		  	<td>16:10 ~ 17:00</td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		</tr>
-		<tr>
-		  	<td>17:10 ~ 18:00</td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		 	<td></td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		</tr>
-		<tr>
-		  	<td>18:10 ~ 19:00</td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		</tr>
-		<tr>
-		  	<td>19:10 ~ 20:00</td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		</tr>
-		<tr>
-		  	<td>20:10 ~ 21:00</td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		</tr>
-		<tr>
-		  	<td>21:10 ~ 22:00</td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		  	<td></td>
-		</tr>
+    	<div class=container>
+    		<table>
+    			<tr>
+    				<th></th>
+    				<%for(let i=0;i<5;i++){%>
+    					<th><%=weekday[i]%></th>
+    				<%}%>
+    			</tr>
+    			
+				<%for(let j=6;j<=21;j++){%>
+    				<tr>
+    					<%if(j==9){%>
+    						<td>09:10~10:00</td>
+    					<%}else if(j<9){%>
+    						<td>0<%=j%>:10~0<%=(j+1)%>:00</td>
+    					<%}else{%>
+    						<td><%=j%>:10~<%=(j+1)%>:00</td>
+    					<%}%>
+					
+						<%for(let i=1;i<=5;i++){%>
+							<%for(let k=0; k<course.length; k++){%>
+								<%if( (course[k].day == i) && ( course[k].start <= j) && (course[k].end >j) ){%>
+									<td style="color: #FF0000"><%=course[k].class%></td>
+								<%}%>
+							<%}%>
+							<td></td>
+						<%}%>
+    				</tr>
+    			<%}%>
+				
+    		</table>
+    	</div>
 		</table>
 	</div>  
 	</body>

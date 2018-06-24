@@ -76,6 +76,7 @@
 						<th>point</th>
 						<th>time</th>
 						<th>place</th>
+						<th>academy</th>
 						<th>department</th>
 						<th>degree</th>
 						<th>level</th>
@@ -83,13 +84,14 @@
 						<%for(let i=0; i<course.length; i++){%>
 						<tr>
 							<td>
-								<input type="checkbox" name="<%=course[i].class%>" value="<%=course[i].class%>">
+								<input type="checkbox" name="class" value="<%=course[i].class%>">
 						    </td>
 							<td><%=course[i].class%></td>
 							<td><%=course[i].teacher%></td>
 							<td><%=course[i].point%></td>
 							<td><%=course[i].time%></td>
 							<td><%=course[i].place%></td>
+							<td><%=course[i].academy%></td>
 							<td><%=course[i].department%></td>
 							<td><%=course[i].degree%></td>
 							<td><%=course[i].level%></td>
