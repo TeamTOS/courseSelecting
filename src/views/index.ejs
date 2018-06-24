@@ -89,7 +89,7 @@
             'general': ['humanities', 'socialSciences', 'naturalSciences']
         },
         'minor_credited_internship': {
-            'minor': ['trade', 'accounting', 'japanese'],
+            'minor': ['trade', 'accountingMin', 'japaneseMin'],
             'credited': ['creativity', 'patent', 'artIndustry'],
             'internship': ['internship']
         },
@@ -105,8 +105,8 @@
         },
         'law': {
             'bachelor': ['lawU'],
-            'master': ['lawU'],
-            'doctor': ['lawU']
+            'master': ['lawM'],
+            'doctor': ['lawM']
         },
         'commerce': {
             'bachelor': ['money', 'accounting', 'mis'],
@@ -116,7 +116,7 @@
         'foreign': {
             'bachelor': ['english', 'japanese'],
             'master': ['linguistics'],
-            'doctor': ['english', 'linguistics']
+            'doctor': ['linguistics']
         },
         'broadcast': {
             'bachelor': ['journalism'],
@@ -125,12 +125,12 @@
         },
         'international': {
             'bachelor': ['diplomacy'],
-            'master': ['diplomacy'],
-            'doctor': ['diplomacy']
+            'master': ['diplomacyM'],
+            'doctor': ['diplomacyM']
         },
         'education': {
             'bachelor': ['educationU'],
-            'master': ['educationU'],
+            'master': ['educationM'],
             'doctor': ['educationU']
         },
         'literature': {
@@ -174,8 +174,8 @@
         "socialSciences": "社會通",
         "naturalSciences": "自然通",
         "trade": "貿輔",
-        "accounting": "會輔",
-        "japanese": "日輔",
+        "accountingMin": "會輔",
+        "japaneseMin": "日輔",
         "creativity": "創意學程",
         "patent": "專利學程",
         "artIndustry": "藝術產業經營學程",
@@ -224,8 +224,11 @@
         'japanese': '日本語文學系',
         'linguistics': '語言學研究所',
         'lawU': '法律系',
+        'lawM':'法律所',
         'diplomacy': '外交學系',
-        'educationU': '教育學系'
+        'diplomacyM':'外交所',
+        'educationU': '教育學系',
+        'educationM':'教育所'
     };
 
     var id = 1;//use to generate dynamic id
