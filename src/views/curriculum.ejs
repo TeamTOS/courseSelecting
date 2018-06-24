@@ -51,7 +51,7 @@
 					<%for(let i=1;i<=5;i++){%>
 					    <% var flag = false%>
 						<%for(let k=0; k<course.length; k++){%>
-							<%if( (course[k].day == i) && ( course[k].start <= j) && (course[k].end > j) ){%>
+							<%if( (course[k].day == i) && ( course[k].start <= j) && (course[k].end >= j) ){%>
 								<td style="color: #FF0000"><%=course[k].class%></td>
 								<% flag = true %>
 							<%}%>
