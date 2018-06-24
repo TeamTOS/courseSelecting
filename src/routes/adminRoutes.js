@@ -57,13 +57,30 @@ const courses = [
 
 const router = function () {
 
-    adminRouter.use((req, res, next) => {
-        if (req.user) {
-            next();
-        } else {
-            res.redirect('/');
-        }
-    });
+    // adminRouter.use((req, res, next) => {
+    //     if (req.user) {
+    //         next();
+    //     } else {
+    //         res.redirect('/');
+    //     }
+    // });
+    adminRouter.route('/insertFakeUsers')
+        .get( (req,res) => {
+            (async function insertFakeUser(){
+                const url = 'mongodb://localhost:27017';
+                const dbName = 'courseApp';
+                try{
+                    const client = await MongoClient.connect(url);
+                    const db = client.db(dbName);
+                    const coll = db.collection('users');
+                    const rlt_insertFakeUsers = await coll.insertOne({studentID: 'course', password: 'selecting'});
+                    res.json(rlt_insertFakeUsers);
+                }catch(err){
+                    if(err)
+                        console.log(err);
+                }
+            }()); 
+        });
     adminRouter.route('/insertFakeCourses')
         .get( (req,res) => {
             (async function insertFakeCourse(){
