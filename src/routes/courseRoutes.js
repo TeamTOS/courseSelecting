@@ -45,8 +45,7 @@ const router = function () {
                     let query_arr = [];
                     for(let i=0; i< req.body.academy.length; i++){
                         let query = {
-                            department: req.body.department[i], 
-                            degree: req.body.degree[i]
+                            department: req.body.department[i]
                         };
                         query_arr[i] = query;
                     }

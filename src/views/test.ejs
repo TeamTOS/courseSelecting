@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script src="js/jquery.min.js"></script>
+    	<script src="js/skel.min.js"></script>
+    	<script src="js/skel-layers.min.js"></script>
+    	<script src="js/init.js"></script>
+
+    </head>
+    <body>
+
+        <h1 id="ttest"></h1>
+        <% var test = 1236;%>
+
+        <script>
+            console.log('Fuck you');
+            var getTest = <%= test %>
+            console.log('getTest');
+            $('#ttest').append(getTest);
+        </script>
+
+    </body>
+</html>

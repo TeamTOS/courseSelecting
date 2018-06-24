@@ -92,7 +92,7 @@ mainCon.push([7, 01]);
 /////////////////////////
 
 app.get('/', (req, res) => {
-    res.render('login');
+	res.render('login');
 });
 
 app.listen(port, () => {

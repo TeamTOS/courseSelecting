@@ -27,41 +27,43 @@
 			</ul>
 		</nav>
 	</header>
+
 	<div class=container>
 		<table>
-    	<div class=container>
-    		<table>
-    			<tr>
-    				<th></th>
-    				<%for(let i=0;i<5;i++){%>
-    					<th><%=weekday[i]%></th>
-    				<%}%>
-    			</tr>
-    			
-				<%for(let j=6;j<=21;j++){%>
-    				<tr>
-    					<%if(j==9){%>
-    						<td>09:10~10:00</td>
-    					<%}else if(j<9){%>
-    						<td>0<%=j%>:10~0<%=(j+1)%>:00</td>
-    					<%}else{%>
-    						<td><%=j%>:10~<%=(j+1)%>:00</td>
-    					<%}%>
+			<tr>
+				<th></th>
+				<%for(let i=0;i<5;i++){%>
+					<th><%=weekday[i]%></th>
+				<%}%>
+			</tr>
+			
+			<%for(let j=6;j<=21;j++){%>
+				<tr>
+					<%if(j==9){%>
+						<td>09:10~10:00</td>
+					<%}else if(j<9){%>
+						<td>0<%=j%>:10~0<%=(j+1)%>:00</td>
+					<%}else{%>
+						<td><%=j%>:10~<%=(j+1)%>:00</td>
+					<%}%>
 					
-						<%for(let i=1;i<=5;i++){%>
-							<%for(let k=0; k<course.length; k++){%>
-								<%if( (course[k].day == i) && ( course[k].start <= j) && (course[k].end >j) ){%>
-									<td style="color: #FF0000"><%=course[k].class%></td>
-								<%}%>
+
+					<%for(let i=1;i<=5;i++){%>
+					    <% var flag = false%>
+						<%for(let k=0; k<course.length; k++){%>
+							<%if( (course[k].day == i) && ( course[k].start <= j) && (course[k].end > j) ){%>
+								<td style="color: #FF0000"><%=course[k].class%></td>
+								<% flag = true %>
 							<%}%>
+						<%}%>
+						<%if(flag == false){%>
 							<td></td>
 						<%}%>
-    				</tr>
-    			<%}%>
-				
-    		</table>
-    	</div>
+					<%}%>
+
+				</tr>
+			<%}%>
 		</table>
-	</div>  
+	</div>
 	</body>
 </html>
