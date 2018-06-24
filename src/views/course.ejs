@@ -33,21 +33,35 @@
 			<br>
 			<table style="text-align: center">
 				<tr>
-					<th></th>
+					<th style="text-align: center">color</th>
 					<th style="text-align: center">Academy</th>
 					<th style="text-align: center">Degree</th>
 					<th style="text-align: center">Department</th>
 				</tr>
-				<%for(let i=0;i<course.length;i++){%>
+				<%for(let i=0;i<academy.length;i++){%>
 					<tr>
-						<%if(i==0){%>
-							<td style="background-color: #FF0000;"></td>
-						<%}else if(i==1){%>
-							<td style="background-color: #0000FF;"></td>
+						<%if (academy[i] == 'literature') {%>
+							<td style="background-color: black;"></td>
+						<%}else if(academy[i] == 'science'){%>
+							<td style="background-color: brown;"></td>
+						<%}else if(academy[i] == 'society'){%>
+							<td style="background-color: red;"></td>
+						<%}else if(academy[i] == 'law'){%>
+							<td style="background-color: orange;"></td>
+						<%}else if(academy[i] == 'commerce'){%>
+							<td style="background-color: yellow;"></td>
+						<%}else if(academy[i] == 'foreign'){%>
+							<td style="background-color: green;"></td>
+						<%}else if(academy[i] == 'broadcast'){%>
+							<td style="background-color: blue;"></td>
+						<%}else if(academy[i] == 'international'){%>
+							<td style="background-color: violet;"></td>
+						<%}else if(academy[i] == 'education'){%>
+							<td style="background-color: grey;"></td>
 						<%}%>
 						<td><%=academy[i]%></td>
-						<td><%=course[i].degree%></td>
-						<td><%=course[i].department%></td>
+						<td><%=degree[i]%></td>
+						<td><%=department[i]%></td>
 					</tr>
 				<%}%>
 			</table>
