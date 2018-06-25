@@ -44,10 +44,14 @@ const router = function () {
                     const db = client.db(dbName);
                     let coll = db.collection('courses');
                     let query_arr = [];
+                    // console.log(checkboxQuery);
+                    // if(req.body.checkboxQuery == 'string')
+                    //     req.body.checkboxQuery = [req.body.checkboxQuery];
                     for(let i=0; i< req.body.checkboxQuery.length; i++){
-                        let id = new objectId(req.body.checkboxQuery[i]);
+                        // let id = new objectId(req.body.checkboxQuery[i]);
                         let query = {
-                            _id: id
+                            //_id: id
+                            course_id: req.body.checkboxQuery[i]
                         };
                         query_arr[i] = query;
                     }
