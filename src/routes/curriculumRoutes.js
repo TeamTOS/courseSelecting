@@ -44,19 +44,19 @@ const router = function () {
                     const db = client.db(dbName);
                     let coll = db.collection('courses');
                     let query_arr = [];
-                    // console.log(checkboxQuery);
-                    // if(req.body.checkboxQuery == 'string')
-                    //     req.body.checkboxQuery = [req.body.checkboxQuery];
-                    for(let i=0; i< req.body.checkboxQuery.length; i++){
-                        // let id = new objectId(req.body.checkboxQuery[i]);
-                        let query = {
-                            //_id: id
-                            course_id: req.body.checkboxQuery[i]
-                        };
-                        query_arr[i] = query;
-                    }
-                    const rlt_findSpecifiedCourses = await coll.find({ $or: query_arr }).toArray();
-                    
+                    let rlt_findSpecifiedCourses;
+                    if(typeof(req.body.checkboxQuery) == 'string')
+                        rlt_findSpecifiedCourses = await coll.find({ course_id: req.body.checkboxQuery }).toArray();
+                    else{
+                        for(let i=0; i< req.body.checkboxQuery.length; i++){
+                            let query = {
+                                course_id: req.body.checkboxQuery[i]
+                            };
+                            query_arr[i] = query;
+                        }
+                        rlt_findSpecifiedCourses = await coll.find({ $or: query_arr }).toArray();
+                    }   
+
                     for(let i=0; i< rlt_findSpecifiedCourses.length; i++){
                         rlt_findSpecifiedCourses[i].studentID = req.user.studentID;
                     }
