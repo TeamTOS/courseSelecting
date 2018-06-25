@@ -194,7 +194,7 @@ const router = function () {
                     const client = await MongoClient.connect(url);
                     const db = client.db(dbName);
                     const coll = db.collection('courses');
-                    const rlt_insertFakeCourses = await coll.insertMany(courses);
+                    const rlt_insertFakeCourses = await coll.insertMany(new_courses);
                     res.json(rlt_insertFakeCourses);
                 } catch (err) {
                     if (err)
