@@ -1,5 +1,6 @@
 const express = require('express');
 const {MongoClient} = require('mongodb');
+const objectId = require('mongodb').ObjectID;
 
 const curriculumRouter = express.Router();
 
@@ -43,9 +44,10 @@ const router = function () {
                     const db = client.db(dbName);
                     let coll = db.collection('courses');
                     let query_arr = [];
-                    for(let i=0; i< req.body.class.length; i++){
+                    for(let i=0; i< req.body.checkboxQuery.length; i++){
+                        let id = new objectId(req.body.checkboxQuery[i]);
                         let query = {
-                            class: req.body.class[i]
+                            _id: id
                         };
                         query_arr[i] = query;
                     }
