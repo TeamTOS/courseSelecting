@@ -52,7 +52,7 @@ const courses = [
         time: 'MonD56',
         day: 1,
         start: 13,
-        end: 16,
+        end: 15,
         place: 'daRen301',
         academy: 'science',
         department: 'computerScience',
@@ -66,7 +66,7 @@ const courses = [
         time: 'WedEFG',
         day: 3,
         start: 18,
-        end: 20,
+        end: 19,
         place: 'daYong206',
         academy: 'law',
         department: 'lawU',
@@ -80,7 +80,7 @@ const courses = [
         time: 'FriD56',
         day: 5,
         start: 13,
-        end: 16,
+        end: 15,
         place: 'HsuehSi107',
         academy: 'commerce',
         department: 'accounting',
@@ -94,7 +94,7 @@ const courses = [
         time: 'FriD56',
         day: 5,
         start: 13,
-        end: 16,
+        end: 15,
         place: 'daRen301',
         academy: 'science',
         department: 'computerScience',
@@ -108,7 +108,7 @@ const courses = [
         time: 'Tue234',
         day: 2,
         start: 9,
-        end: 12,
+        end: 11,
         place: 'daRen301',
         academy: 'science',
         department: 'computerScience',
@@ -122,7 +122,7 @@ const courses = [
         time: 'Thu234',
         day: 4,
         start: 9,
-        end: 12,
+        end: 11,
         place: 'daRen106',
         academy: 'science',
         department: 'computerScience',
@@ -136,7 +136,7 @@ const courses = [
         time: 'MonD56',
         day: 1,
         start: 13,
-        end: 16,
+        end: 15,
         place: 'BaiNien113',
         academy: 'literature',
         department: 'chineseM',
@@ -150,7 +150,7 @@ const courses = [
         time: 'Fri234',
         day: 5,
         start: 9,
-        end: 12,
+        end: 11,
         place: 'Zitow203',
         academy: 'literature',
         department: 'chinese',
@@ -194,7 +194,7 @@ const router = function () {
                     const client = await MongoClient.connect(url);
                     const db = client.db(dbName);
                     const coll = db.collection('courses');
-                    const rlt_insertFakeCourses = await coll.insertMany(new_courses);
+                    const rlt_insertFakeCourses = await coll.insertMany(courses);
                     res.json(rlt_insertFakeCourses);
                 } catch (err) {
                     if (err)
